@@ -42,7 +42,7 @@ export const updatePost = async (req, res) => {
     const updatePost = await Post.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
-    console.log(post);
+
     return res.send(updatePost);
   } catch (error) {
     console.error(error.message);
