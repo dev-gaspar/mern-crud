@@ -32,8 +32,7 @@ export function PostForm() {
           <h3 className="text-xl">Nueva publicacion</h3>
           <Link
             to="/"
-            className="text-gray-400 text-sm hover:text-indigo-600"
-            transition
+            className="text-gray-400 text-sm hover:text-indigo-600 transition"
           >
             Volver
           </Link>
@@ -117,7 +116,7 @@ export function PostForm() {
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
-                  <AiOutlineLoading3Quarters className="animate-spin" h-5 w-5 />
+                  <AiOutlineLoading3Quarters className="animate-spin" />
                 ) : (
                   "Publicar"
                 )}
