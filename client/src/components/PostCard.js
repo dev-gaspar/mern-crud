@@ -16,7 +16,7 @@ export function PostCard({ post }) {
           </p>
           <div>
             <button
-              className="bg-red-500 hover:bg-red-400 px-3 py-2 text-white rounded-sm mx-2"
+              className="bg-red-500 hover:bg-red-400 px-2 py-1  md:px-3 md:py-2 text-white rounded-sm mx-2"
               onClick={() => {
                 deletePost(id);
                 toast.dismiss(t.id);
@@ -44,12 +44,14 @@ export function PostCard({ post }) {
 
   return (
     <div
-      className="bg-zinc-800 text-white rounded-md shadow-md shadow-black hover:bg-zinc-700 hover:cursor-pointer transition"
+      className="bg-zinc-800 text-white rounded-md shadow-md shadow-black hover:bg-zinc-700 hover:cursor-pointer overflow-hidden transition      "
       onClick={() => navigate(`/posts/${post._id}`)}
     >
-      <div className="px-4 py-7">
+      <div className="px-2 py-2 md:px-4 md:py-4">
         <div className="flex justify-between items-center">
-          <h3 className="text-md font-semibold">{post.title}</h3>
+          <h3 className="text-md font-semibold text-sm md:text-xl">
+            {post.title}
+          </h3>
           <button
             className="bg-red-500 hover:bg-red-400 text-sm px-2 py-1 rounded-sm transition"
             onClick={(e) => {
@@ -60,13 +62,14 @@ export function PostCard({ post }) {
             <MdDelete />
           </button>
         </div>
-        <p className="text-gray-400">{post.description}</p>
+        <p className="text-gray-400 text-xs md:text-base">{post.description}</p>
       </div>
+
       {post.image && (
         <img
           src={post.image.url}
           alt={post.title}
-          className="object-cover h-80 w-full rounded-md "
+          className=" rounded-md object-cover w-full h-full"
         />
       )}
     </div>

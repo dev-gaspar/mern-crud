@@ -96,19 +96,22 @@ export function PostForm() {
               />
 
               <label
-                htmlFor="description"
-                className="text-sm block font-bold text-gray-400"
+                className="block mb-2 text-sm font-medium text-gray-300"
+                htmlFor="file_input"
               >
                 Imagen
               </label>
-
               <input
-                type="file"
+                className="block w-full text-sm rounded-lg border cursor-pointer text-gray-400 focus:outline-none bg-gray-700 border-gray-600 placeholder-gray-400"
+                aria-describedby="file_input_help"
                 name="image"
-                className="px-3 py-2 focus:outline-none rounded bg-gray-600
-              text-white w-full mb-4"
+                type="file"
+                accept="image/x-png,image/gif,image/jpeg, image/svg,  image/jpg"
                 onChange={(e) => setFieldValue("image", e.target.files[0])}
               />
+              <p className="mt-1 text-sm text-gray-300" id="file_input_help">
+                SVG, PNG, JPG or GIF.
+              </p>
 
               <button
                 type="submit"
