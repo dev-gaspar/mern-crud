@@ -53,7 +53,7 @@ export function PostCard({ post }) {
             {post.title}
           </h3>
           <button
-            className="bg-red-500 hover:bg-red-400 text-sm px-2 py-1 rounded-sm transition"
+            className="text-red-500 hover:text-red-400 hover:bg-zinc-400 text-sm px-2 py-1 rounded-sm transition"
             onClick={(e) => {
               e.stopPropagation();
               handleDelete(post._id);
